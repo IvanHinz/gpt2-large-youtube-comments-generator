@@ -1,0 +1,13 @@
+torch==2.10.0
+torchvision==0.25.0
+transformers==5.4.0
+urllib3==2.6.3
+streamlit==1.55.0
+requests==2.33.1
+python-dotenv==1.2.2
+pydantic==2.12.5
+pandas==2.3.3
+numpy==2.4.4
+huggingface_hub==1.8.0
+fast-langdetect==1.0.0
+google-api-python-client==2.193.0
