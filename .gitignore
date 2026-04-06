@@ -3,6 +3,7 @@ __pycache__/
 .vscode/
 .idea/
 .env
+.ipynb_checkpoints
 models/
 *.log
 *.pyc
