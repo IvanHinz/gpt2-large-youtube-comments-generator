@@ -64,6 +64,9 @@ else:
         
     with col2:
         title = st.text_input("Enter Video Title")
+
+if (channel_title is None) and (title is None) and (st.session_state.option == "With URL"):
+    st.text("Wait for the channel title and video title to be parsed!")
     
 if channel_title and title and (not is_english_language_video(channel_title, title)):
     st.error("Enter video with English Title (ex: Trump foreign politics)!")
@@ -201,8 +204,12 @@ st.text("Click this button to generate comments with your generation parameters 
 
 
 if st.button("Generate comments"):
+    if not st.session_state.get("model_loaded", False):
+        st.text("Wait for the model to be loaded!")
     # Load model and tokenizer
     model, tokenizer = load_full_finetuned_model()
+    
+    st.session_state.model_loaded = True
     
     # Formatted text
     formatted_text = format_text(channel_title, title)
